@@ -14,8 +14,8 @@
 * D. willistoni 00 [(SRR13070590)](https://www.ncbi.nlm.nih.gov/sra/SRX9518268)
 * D. tropicalis [(SRR13070605)](https://www.ncbi.nlm.nih.gov/sra/SRX9518253)
 * D. insularis [(SRR13070745)](https://www.ncbi.nlm.nih.gov/sra/SRX9518113)
-* D. sp [(SRR13070648)](https://www.ncbi.nlm.nih.gov/sra/SRX9518211)(In NCBI as D. nebulosa, but possible D. sucinea as well)
-* D. sucinea [(SRR13070647)](https://www.ncbi.nlm.nih.gov/sra/SRX9518212)
+* D. sp [(SRR13070648)](https://www.ncbi.nlm.nih.gov/sra/SRX9518211)(Possible D. sucinea)
+* D. sucinea [(SRR13070647)](https://www.ncbi.nlm.nih.gov/sra/SRX9518212)(In NCBI as D. nebulosa)
 * D. equinoxialis [(SRR13070606)](https://www.ncbi.nlm.nih.gov/sra/SRX9518252)
 
 Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 drosophilid genomes](https://elifesciences.org/articles/66405)
@@ -125,8 +125,8 @@ Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa
 #### Illumina sequences from [Kim *et al.* 2021](https://elifesciences.org/articles/66405)
 * D. insularis [(SRR13070692)](https://www.ncbi.nlm.nih.gov/sra/SRX9518166)
 * D. willistoni LG3 [(SRR13070636)](https://www.ncbi.nlm.nih.gov/sra/SRX9518222) (Used for D. D.willistoni 00 as well)
-* D. sucinea [(SRR13070638)](https://www.ncbi.nlm.nih.gov/sra/SRX9518220)
-* D. sp [(SRR13070637)](https://www.ncbi.nlm.nih.gov/sra/SRX9518221)(In NCBI as D. nebulosa, but possible D. sucinea as well)
+* D. sucinea [(SRR13070638)](https://www.ncbi.nlm.nih.gov/sra/SRX9518220)(In NCBI as D. nebulosa)
+* D. sp [(SRR13070637)](https://www.ncbi.nlm.nih.gov/sra/SRX9518221)(Possible D. sucinea)
 
 Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
 
