@@ -94,8 +94,12 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish.sh)
 
 * Filter VCF to
+
 `QUAL>=5 && FMT/DP>=40 && FMT/GQ>=20 && FMT/VAF>=0.6` in MS, A28, O11, D_paulistorum_L06, D_sp, D_tropicalis
+
 `QUAL>=5 && FMT/DP>=20 && FMT/GQ>=20 && FMT/VAF>=0.6` in D_sucinea, D_insularis, D_willistoni_00, D_willistoni_LG3
+
+
 
 * Change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
 	* Commands to filter the VCF and change the assembly [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
