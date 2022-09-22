@@ -91,13 +91,11 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 
 ## Assembly polish
 
-* Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools)
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish.sh)
+Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish.sh)
 
-* Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish.sh)
+Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish.sh)
 
-* Filter VCF to
+Filter VCF to
 
 `QUAL>=5 && FMT/DP>=40 && FMT/GQ>=20 && FMT/VAF>=0.6` in MS, A28, O11, D_paulistorum_L06, D_sp, D_tropicalis
 
@@ -111,32 +109,31 @@ Visual evidence for this selection:
 
 Example 1 from visual report [A28](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/A28.visual_report.html), example 2 from visual report [D_willistoni_00](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/D_willistoni_00.visual_report.html). All reports [here](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report).
 
-* Change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
-	* Commands to filter the VCF and change the assembly [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
+Change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
 
-* Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa) and [samtools](https://github.com/samtools/samtools)
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
-	* Illumina sequences from Klasson's lab:
-		* D. paulistorum O11
-		* D. paulistorum MS (Used for D. paulistorum L12 assembly as well)
-		* D. paulistorum A28
-		* D. tropicalis
-		* D. equinoxialis
-	* Illumina sequences from [Kim *et al.* 2021](https://elifesciences.org/articles/66405)
-		* D. insularis
-		* D. willistoni 00
-		* D. willistoni LG3
-		* D. sucinea
-		* D. sp (possible D. sucinea as well)
+Commands to filter the VCF and change the assembly [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
 
-* Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
+Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa) and [samtools](https://github.com/samtools/samtools). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
+
+#### Illumina sequences from Klasson's lab:
+* D. paulistorum O11
+* D. paulistorum MS (Used for D. paulistorum L12 assembly as well)
+* D. paulistorum A28
+* D. tropicalis
+* D. equinoxialis
+
+#### Illumina sequences from [Kim *et al.* 2021](https://elifesciences.org/articles/66405)
+* D. insularis
+* D. willistoni 00
+* D. willistoni LG3
+* D. sucinea
+* D. sp (possible D. sucinea as well)
+
+Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
 
 
 ## Assembly assessment
 
-* Run [BUSCO v5.2.2](https://gitlab.com/ezlab/busco/-/releases/5.2.2)
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_BUSCO_assembly_evaluation.sh)
+Run [BUSCO v5.2.2](https://gitlab.com/ezlab/busco/-/releases/5.2.2). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_BUSCO_assembly_evaluation.sh)
 
-* Run [Quast v5.0.2](http://bioinf.spbau.ru/quast)
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_QUAST_assembly_evaluation.sh)
+Run [Quast v5.0.2](http://bioinf.spbau.ru/quast). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_QUAST_assembly_evaluation.sh)
