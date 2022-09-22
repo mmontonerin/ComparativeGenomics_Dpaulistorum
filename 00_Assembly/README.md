@@ -124,7 +124,7 @@ Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa
 
 #### Illumina sequences from [Kim *et al.* 2021](https://elifesciences.org/articles/66405)
 * D. insularis [(SRR13070692)](https://www.ncbi.nlm.nih.gov/sra/SRX9518166)
-* D. willistoni LG3 [(SRR13070636)](https://www.ncbi.nlm.nih.gov/sra/SRX9518222)
+* D. willistoni LG3 [(SRR13070636)](https://www.ncbi.nlm.nih.gov/sra/SRX9518222) (Used for D. D.willistoni 00 as well)
 * D. sucinea [(SRR13070638)](https://www.ncbi.nlm.nih.gov/sra/SRX9518220)
 * D. sp [(SRR13070637)](https://www.ncbi.nlm.nih.gov/sra/SRX9518221)(In NCBI as D. nebulosa, but possible D. sucinea as well)
 
