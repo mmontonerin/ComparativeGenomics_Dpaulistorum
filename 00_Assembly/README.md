@@ -58,8 +58,8 @@ Create run.cfg file:
 [General]
 job_type = local
 job_prefix = nextDenovo
-task = all 
-rewrite = yes 
+task = all
+rewrite = yes
 deltmp = yes
 parallel_jobs = 4
 input_type = raw
@@ -69,8 +69,8 @@ workdir = /space/no_backup/merce/nextdenovo/filter_reads/A28_filtered_40X_length
 
 [correct_option]
 read_cutoff = 1k
-genome_size = 250m 
-sort_options = -m 7g -t 2 
+genome_size = 250m
+sort_options = -m 7g -t 2
 minimap2_options_raw = -t 3
 pa_correction = 17
 correction_options = -p 2
@@ -87,13 +87,17 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 
 ## Assembly polish
 
-* Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools) 
+* Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools)
 	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish.sh)
 
-* Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants 
+* Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants
 	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish.sh)
 
-* Filter VCF to `QUAL>=30 && FMT/DP>=10 && FMT/GQ>=30 && FMT/VAF>=0.8` and change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
+* Filter VCF to
+`QUAL>=5 && FMT/DP>=40 && FMT/GQ>=20 && FMT/VAF>=0.6` in MS, A28, O11, D_paulistorum_L06, D_sp, D_tropicalis
+`QUAL>=5 && FMT/DP>=20 && FMT/GQ>=20 && FMT/VAF>=0.6` in D_sucinea, D_insularis, D_willistoni_00, D_willistoni_LG3
+
+* Change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
 	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
 
 * Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa) and [samtools](https://github.com/samtools/samtools)
@@ -121,6 +125,3 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 
 * Run [Quast v5.0.2](http://bioinf.spbau.ru/quast)
 	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_QUAST_assembly_evaluation.sh)
-
-
-
