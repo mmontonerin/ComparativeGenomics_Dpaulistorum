@@ -123,11 +123,10 @@ Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa
 * D. equinoxialis
 
 #### Illumina sequences from [Kim *et al.* 2021](https://elifesciences.org/articles/66405)
-* D. insularis
-* D. willistoni 00
-* D. willistoni LG3
-* D. sucinea
-* D. sp (possible D. sucinea as well)
+* D. insularis [(SRR13070692)](https://www.ncbi.nlm.nih.gov/sra/SRX9518166)
+* D. willistoni LG3 [(SRR13070636)](https://www.ncbi.nlm.nih.gov/sra/SRX9518222)
+* D. sucinea [(SRR13070638)](https://www.ncbi.nlm.nih.gov/sra/SRX9518220)
+* D. sp [(SRR13070637)](https://www.ncbi.nlm.nih.gov/sra/SRX9518221)(In NCBI as D. nebulosa, but possible D. sucinea as well)
 
 Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
 
