@@ -14,6 +14,7 @@
 	* D. insularis
 	* D. sp
 	* D. sucinea
+	* D. equinoxialis
 
 Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 drosophilid genomes](https://elifesciences.org/articles/66405)
 
@@ -32,6 +33,7 @@ Using [Filt-long v0.2.1](https://github.com/rrwick/Filtlong)
 |D. insularis|-|-|-|No subsample|-|-|-|
 |D. sp|-|-|-|No subsample|-|-|-|
 |D. sucinea|-|-|-|No subsample|-|-|-|
+|D. equinoxialis|-|-|-|No subsample|-|-|-|
 
 
 ## Whole genome assembly
@@ -117,6 +119,7 @@ Example 1 from visual report [A28](https://github.com/mmontonerin/ComparativeGen
 		* D. paulistorum MS (Used for D. paulistorum L12 assembly as well)
 		* D. paulistorum A28
 		* D. tropicalis
+		* D. equinoxialis
 	* Illumina sequences from [Kim *et al.* 2021](https://elifesciences.org/articles/66405)
 		* D. insularis
 		* D. willistoni 00
