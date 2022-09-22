@@ -27,13 +27,13 @@ Using [Filt-long v0.2.1](https://github.com/rrwick/Filtlong)
 |D. paulistorum A28|3424749|27698779973|113|[Length priority, 40X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_A28_subsample.sh)|318515|10000006664|41|
 |D. paulistorum L12|1461479|8394212233|35|No subsample|-|-|-|
 |D. paulistorum L06|1178699|13536125176|50|No subsample|-|-|-|
-|D. willistoni LG3|-|-|-|No subsample|-|-|-|
-|D. willistoni 00|-|-|-|No subsample|-|-|-|
-|D. tropicalis|-|-|-|No subsample|-|-|-|
-|D. insularis|-|-|-|No subsample|-|-|-|
-|D. sp|-|-|-|No subsample|-|-|-|
-|D. sucinea|-|-|-|No subsample|-|-|-|
-|D. equinoxialis|-|-|-|No subsample|-|-|-|
+|D. willistoni LG3|601201|9119677023|-|No subsample|-|-|-|
+|D. willistoni 00|1867798|5701144432|-|No subsample|-|-|-|
+|D. tropicalis|2208635|11915513684|-|No subsample|-|-|-|
+|D. insularis|1291630|7719888113|-|No subsample|-|-|-|
+|D. sp|545133|8072417990|-|No subsample|-|-|-|
+|D. sucinea|377564|7844680311|-|No subsample|-|-|-|
+|D. equinoxialis|1913794|10284175436|-|No subsample|-|-|-|
 
 
 ## Whole genome assembly
