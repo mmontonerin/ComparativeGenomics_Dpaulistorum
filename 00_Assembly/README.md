@@ -97,15 +97,15 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 
 `QUAL>=5 && FMT/DP>=40 && FMT/GQ>=20 && FMT/VAF>=0.6` in MS, A28, O11, D_paulistorum_L06, D_sp, D_tropicalis
 
-![DP40 visual report](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/DP40.png)
-
-From visual report [A28](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/A28.visual_report.html)
-
 `QUAL>=5 && FMT/DP>=20 && FMT/GQ>=20 && FMT/VAF>=0.6` in D_sucinea, D_insularis, D_willistoni_00, D_willistoni_LG3
+
+Visual evidence for this selection:
+
+![DP40 visual report](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/DP40.png)
 
 ![DP20 visual report](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/DP20.png)
 
-From visual report [D_willistoni_00](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/D_willistoni_00.visual_report.html)
+Example 1 from visual report [A28](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/A28.visual_report.html), example 2 from visual report [D_willistoni_00](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/D_willistoni_00.visual_report.html). All reports [here](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report).
 
 * Change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
 	* Commands to filter the VCF and change the assembly [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
