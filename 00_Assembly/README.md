@@ -6,15 +6,15 @@
 	* D. paulistorum A28
 
 * Retreived published reads:
-	* D. paulistorum L12
-	* D. paulistorum L06
-	* D. willistoni LG3
-	* D. willistoni 00
-	* D. tropicalis
-	* D. insularis
-	* D. sp
-	* D. sucinea
-	* D. equinoxialis
+	* D. paulistorum L12 [(SRR13070664)](https://www.ncbi.nlm.nih.gov/sra/SRX9518195)
+	* D. paulistorum L06 [(SRR13070744)](https://www.ncbi.nlm.nih.gov/sra/SRX9518114)
+	* D. willistoni LG3 [(SRR13070645)](https://www.ncbi.nlm.nih.gov/sra/SRX9518214)
+	* D. willistoni 00 [(SRR13070590)](https://www.ncbi.nlm.nih.gov/sra/SRX9518268)
+	* D. tropicalis [(SRR13070605)](https://www.ncbi.nlm.nih.gov/sra/SRX9518253)
+	* D. insularis [(SRR13070745)](https://www.ncbi.nlm.nih.gov/sra/SRX9518113)
+	* D. sp [(SRR13070648)](https://www.ncbi.nlm.nih.gov/sra/SRX9518211)
+	* D. sucinea [(SRR13070647)](https://www.ncbi.nlm.nih.gov/sra/SRX9518212)
+	* D. equinoxialis [(SRR13070606)](https://www.ncbi.nlm.nih.gov/sra/SRX9518252)
 
 Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 drosophilid genomes](https://elifesciences.org/articles/66405)
 
