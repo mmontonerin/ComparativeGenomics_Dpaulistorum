@@ -98,7 +98,7 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 `QUAL>=5 && FMT/DP>=20 && FMT/GQ>=20 && FMT/VAF>=0.6` in D_sucinea, D_insularis, D_willistoni_00, D_willistoni_LG3
 
 * Change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
+	* Commands to filter the VCF and change the assembly [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
 
 * Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa) and [samtools](https://github.com/samtools/samtools)
 	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
