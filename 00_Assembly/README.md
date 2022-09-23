@@ -24,9 +24,9 @@ Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 
 Using [Filt-long v0.2.1](https://github.com/rrwick/Filtlong)
 |Species|Starting number of reads|Starting base pairs|Starting coverage|Subsampling method|Number of reads post-subsample|Base pairs post-subsample|Coverage post-subsample|
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|D. paulistorum O11|1376601|19454247303|77|[Quality priority, 50X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_O11_subsample.sh)|827899|12500020744|50|
-|D. paulistorum MS|2738679|23800779581|91|[Length priority, 40X, using non-downsampled assembly as reference](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_MS_subsample.sh)|430957|10000006739|38|
-|D. paulistorum A28|3424749|27698779973|113|[Length priority, 40X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_A28_subsample.sh)|318515|10000006664|41|
+|D. paulistorum O11|1376601|19454247303|77|[Quality priority, 50X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/00_D_paulistorum_O11_subsample.sh)|827899|12500020744|50|
+|D. paulistorum MS|2738679|23800779581|91|[Length priority, 40X, using non-downsampled assembly as reference](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/00_D_paulistorum_MS_subsample.sh)|430957|10000006739|38|
+|D. paulistorum A28|3424749|27698779973|113|[Length priority, 40X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/00_D_paulistorum_A28_subsample.sh)|318515|10000006664|41|
 |D. paulistorum L12|1461479|8394212233|35|No subsample|-|-|-|
 |D. paulistorum L06|1178699|13536125176|50|No subsample|-|-|-|
 |D. willistoni LG3|601201|9119677023|-|No subsample|-|-|-|
@@ -86,16 +86,16 @@ nextgraph_options = -a 1
 
 One must adapt the settings according to the capacity of your own computer/server in which you are running it, check guidelines [here](https://nextdenovo.readthedocs.io/en/latest/OPTION.html) and [here](https://nextdenovo.readthedocs.io/en/latest/FAQ.html#how-to-optimize-parallel-computing-parameters).
 
-After assembly, contigs are renamed with [this script](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/fasta_rename_nextdenovo.pl) to keep them simple and without spaces nor symbols.
+After assembly, contigs are renamed with [this script](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/fasta_rename_nextdenovo.pl) to keep them simple and without spaces nor symbols.
 
 
 ## Assembly polish
 
 ### Long-read polish
 
-Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish.sh)
+Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_0_map_long_reads_assembly_polish.sh)
 
-Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish.sh)
+Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_1_Pepper_assembly_polish.sh)
 
 Filter VCF to
 
@@ -105,19 +105,19 @@ Filter VCF to
 
 Visual evidence for this selection:
 
-![DP40 visual report](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/DP40.png)
+![DP40 visual report](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/Visual_Reports/PEPPER_visual_report/DP40.png)
 
-![DP20 visual report](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/DP20.png)
+![DP20 visual report](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/Visual_Reports/PEPPER_visual_report/DP20.png)
 
-Example 1 from visual report [A28](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/A28.visual_report.html), example 2 from visual report [D_willistoni_00](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report/D_willistoni_00.visual_report.html). All reports [here](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/PEPPER_visual_report).
+Example 1 from visual report [A28](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/Visual_Reports/PEPPER_visual_report/A28.visual_report.html), example 2 from visual report [D_willistoni_00](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/Visual_Reports/PEPPER_visual_report/D_willistoni_00.visual_report.html). All reports [here](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/Visual_Reports/PEPPER_visual_report).
 
 Change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
 
-Commands to filter the VCF and change the assembly [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
+Commands to filter the VCF and change the assembly [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
 
 ### Short-read polish
 
-Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa) and [samtools](https://github.com/samtools/samtools). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
+Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa) and [samtools](https://github.com/samtools/samtools). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_3_pilon_assembly_polish.sh)
 
 #### Illumina sequences from Klasson's lab:
 * D. paulistorum O11
@@ -132,11 +132,11 @@ Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa
 * D. sucinea [(SRR13070638)](https://www.ncbi.nlm.nih.gov/sra/SRX9518220)(In NCBI as D. nebulosa)
 * D. sp [(SRR13070637)](https://www.ncbi.nlm.nih.gov/sra/SRX9518221)(Possible D. sucinea)
 
-Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
+Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_3_pilon_assembly_polish.sh)
 
 
 ## Assembly assessment
 
-Run [BUSCO v5.2.2](https://gitlab.com/ezlab/busco/-/releases/5.2.2). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_BUSCO_assembly_evaluation.sh)
+Run [BUSCO v5.2.2](https://gitlab.com/ezlab/busco/-/releases/5.2.2). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/02_BUSCO_assembly_evaluation.sh)
 
-Run [Quast v5.0.2](http://bioinf.spbau.ru/quast). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_QUAST_assembly_evaluation.sh)
+Run [Quast v5.0.2](http://bioinf.spbau.ru/quast). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/02_QUAST_assembly_evaluation.sh)
