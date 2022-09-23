@@ -1,4 +1,4 @@
-### Whole genome assemblies produced:
+## Whole genome assemblies produced:
 
 #### Whole genome sequencing at Klasson's Lab
 
@@ -91,6 +91,8 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 
 ## Assembly polish
 
+### Long-read polish
+
 Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish.sh)
 
 Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish.sh)
@@ -112,6 +114,8 @@ Example 1 from visual report [A28](https://github.com/mmontonerin/ComparativeGen
 Change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
 
 Commands to filter the VCF and change the assembly [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
+
+### Short-read polish
 
 Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa) and [samtools](https://github.com/samtools/samtools). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
 
