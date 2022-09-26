@@ -2,21 +2,21 @@
 
 #### Whole genome sequencing at Klasson's Lab
 
-* D. paulistorum O11
-* D. paulistorum MS
-* D. paulistorum A28
+* *D. paulistorum* O11
+* *D. paulistorum* MS
+* *D. paulistorum* A28
 
 #### Retreived published reads:
 
-* D. paulistorum L12 [(SRR13070664)](https://www.ncbi.nlm.nih.gov/sra/SRX9518195)
-* D. paulistorum L06 [(SRR13070744)](https://www.ncbi.nlm.nih.gov/sra/SRX9518114)
-* D. willistoni LG3 [(SRR13070645)](https://www.ncbi.nlm.nih.gov/sra/SRX9518214)
-* D. willistoni 00 [(SRR13070590)](https://www.ncbi.nlm.nih.gov/sra/SRX9518268)
-* D. tropicalis [(SRR13070605)](https://www.ncbi.nlm.nih.gov/sra/SRX9518253)
-* D. insularis [(SRR13070745)](https://www.ncbi.nlm.nih.gov/sra/SRX9518113)
-* D. sp [(SRR13070648)](https://www.ncbi.nlm.nih.gov/sra/SRX9518211)(Possible D. sucinea)
-* D. sucinea [(SRR13070647)](https://www.ncbi.nlm.nih.gov/sra/SRX9518212)(In NCBI as D. nebulosa)
-* D. equinoxialis [(SRR13070606)](https://www.ncbi.nlm.nih.gov/sra/SRX9518252)
+* *D. paulistorum* L12 [(SRR13070664)](https://www.ncbi.nlm.nih.gov/sra/SRX9518195)
+* *D. paulistorum* L06 [(SRR13070744)](https://www.ncbi.nlm.nih.gov/sra/SRX9518114)
+* *D. willistoni* LG3 [(SRR13070645)](https://www.ncbi.nlm.nih.gov/sra/SRX9518214)
+* *D. willistoni* 00 [(SRR13070590)](https://www.ncbi.nlm.nih.gov/sra/SRX9518268)
+* *D. tropicalis* [(SRR13070605)](https://www.ncbi.nlm.nih.gov/sra/SRX9518253)
+* *D. insularis* [(SRR13070745)](https://www.ncbi.nlm.nih.gov/sra/SRX9518113)
+* *D. sp* [(SRR13070648)](https://www.ncbi.nlm.nih.gov/sra/SRX9518211)(Possible *D. sucinea*)
+* *D. sucinea* [(SRR13070647)](https://www.ncbi.nlm.nih.gov/sra/SRX9518212)(In NCBI as D. nebulosa)
+* *D. equinoxialis* [(SRR13070606)](https://www.ncbi.nlm.nih.gov/sra/SRX9518252)
 
 Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 drosophilid genomes](https://elifesciences.org/articles/66405)
 
@@ -41,7 +41,7 @@ Using [Filt-long v0.2.1](https://github.com/rrwick/Filtlong)
 ## Whole genome assembly
 Using [NextDenovo v2.5.0](https://github.com/Nextomics/NextDenovo/releases/tag/v2.5.0)
 
-(Example with D. paulistorum A28)
+(Example with *D. paulistorum* A28)
 
 Create a folder for each assembly to be made
 
@@ -120,18 +120,18 @@ Commands to filter the VCF and change the assembly [here](https://github.com/mmo
 Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa) and [samtools](https://github.com/samtools/samtools). Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_3_pilon_assembly_polish.sh)
 
 #### Illumina sequences from Klasson's lab:
-* D. paulistorum O11
-* D. paulistorum MS (Used for D. paulistorum L12 assembly as well)
-* D. paulistorum A28
-* D. tropicalis
-* D. equinoxialis
+* *D. paulistorum* O11
+* *D. paulistorum* MS (Used for *D. paulistorum* L12 assembly as well)
+* *D. paulistorum* A28
+* *D. tropicalis*
+* *D. equinoxialis*
 
 #### Illumina sequences from [Kim *et al.* 2021](https://elifesciences.org/articles/66405)
-* D. insularis [(SRR13070692)](https://www.ncbi.nlm.nih.gov/sra/SRX9518166)
-* D. willistoni LG3 [(SRR13070636)](https://www.ncbi.nlm.nih.gov/sra/SRX9518222)
-* D. willistoni 00 [(SRR6426003)](https://www.ncbi.nlm.nih.gov/sra/SRR6426003)
-* D. sucinea [(SRR13070638)](https://www.ncbi.nlm.nih.gov/sra/SRX9518220)(In NCBI as D. nebulosa)
-* D. sp [(SRR13070637)](https://www.ncbi.nlm.nih.gov/sra/SRX9518221)(Possible D. sucinea)
+* *D. insularis* [(SRR13070692)](https://www.ncbi.nlm.nih.gov/sra/SRX9518166)
+* *D. willistoni* LG3 [(SRR13070636)](https://www.ncbi.nlm.nih.gov/sra/SRX9518222)
+* *D. willistoni* 00 [(SRR6426003)](https://www.ncbi.nlm.nih.gov/sra/SRR6426003)
+* *D. sucinea* [(SRR13070638)](https://www.ncbi.nlm.nih.gov/sra/SRX9518220)(In NCBI as *D. nebulosa*)
+* *D. sp* [(SRR13070637)](https://www.ncbi.nlm.nih.gov/sra/SRX9518221)(Possible *D. sucinea*)
 
 Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_3_pilon_assembly_polish.sh)
 
