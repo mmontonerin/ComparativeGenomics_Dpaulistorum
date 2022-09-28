@@ -1,0 +1,37 @@
+Species	Assembly	BUSCO	value	BUSCO_total
+A28	Nextdenovo	Complete Single	96.5	C:97.4%[S:96.5%,D:0.9%],F:1.2%,M:1.4%,n:3285
+A28	40XQ	Complete Single	96.6	C:97.6%[S:96.9%,D:0.7%],F:1.0%,M:1.4%,n:3285
+A28	40XL	Complete Single	96.8	C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285
+A28	50XQ	Complete Single	96.7	C:97.5%[S:96.7%,D:0.8%],F:1.2%,M:1.3%,n:3285
+A28	50XL	Complete Single	96.8	C:97.6%[S:96.8%,D:0.8%],F:1.0%,M:1.4%,n:3285
+A28	40XQr	Complete Single	96.8	C:97.4%[S:96.8%,D:0.6%],F:1.2%,M:1.4%,n:3285
+A28	40XLr	Complete Single	96.4	C:97.3%[S:96.4%,D:0.9%],F:1.0%,M:1.7%,n:3285
+A28	40XL+P	Complete Single	96.8	C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285
+A28	40XL+P+P	Complete Single	98.2	C:99.0%[S:98.2%,D:0.8%],F:0.3%,M:0.7%,n:3285
+A28	Nextdenovo	Complete Duplicated	0.9	C:97.4%[S:96.5%,D:0.9%],F:1.2%,M:1.4%,n:3285
+A28	40XQ	Complete Duplicated	0.7	C:97.6%[S:96.9%,D:0.7%],F:1.0%,M:1.4%,n:3285
+A28	40XL	Complete Duplicated	0.7	C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285
+A28	50XQ	Complete Duplicated	0.8	C:97.5%[S:96.7%,D:0.8%],F:1.2%,M:1.3%,n:3285
+A28	50XL	Complete Duplicated	0.8	C:97.6%[S:96.8%,D:0.8%],F:1.0%,M:1.4%,n:3285
+A28	40XQr	Complete Duplicated	0.6	C:97.4%[S:96.8%,D:0.6%],F:1.2%,M:1.4%,n:3285
+A28	40XLr	Complete Duplicated	0.9	C:97.3%[S:96.4%,D:0.9%],F:1.0%,M:1.7%,n:3285
+A28	40XL+P	Complete Duplicated	0.7	C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285
+A28	40XL+P+P	Complete Duplicated	0.8	C:99.0%[S:98.2%,D:0.8%],F:0.3%,M:0.7%,n:3285
+A28	Nextdenovo	Fragmented	1.2	C:97.4%[S:96.5%,D:0.9%],F:1.2%,M:1.4%,n:3285
+A28	40XQ	Fragmented	1.0	C:97.6%[S:96.9%,D:0.7%],F:1.0%,M:1.4%,n:3285
+A28	40XL	Fragmented	1.0	C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285
+A28	50XQ	Fragmented	1.2	C:97.5%[S:96.7%,D:0.8%],F:1.2%,M:1.3%,n:3285
+A28	50XL	Fragmented	1.0	C:97.6%[S:96.8%,D:0.8%],F:1.0%,M:1.4%,n:3285
+A28	40XQr	Fragmented	1.2	C:97.4%[S:96.8%,D:0.6%],F:1.2%,M:1.4%,n:3285
+A28	40XLr	Fragmented	1.0	C:97.3%[S:96.4%,D:0.9%],F:1.0%,M:1.7%,n:3285
+A28	40XL+P	Fragmented	1.0	C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285
+A28	40XL+P+P	Fragmented	0.3	C:99.0%[S:98.2%,D:0.8%],F:0.3%,M:0.7%,n:3285
+A28	Nextdenovo	Missing	1.4	C:97.4%[S:96.5%,D:0.9%],F:1.2%,M:1.4%,n:3285
+A28	40XQ	Missing	1.4	C:97.6%[S:96.9%,D:0.7%],F:1.0%,M:1.4%,n:3285
+A28	40XL	Missing	1.5	C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285
+A28	50XQ	Missing	1.3	C:97.5%[S:96.7%,D:0.8%],F:1.2%,M:1.3%,n:3285
+A28	50XL	Missing	1.4	C:97.6%[S:96.8%,D:0.8%],F:1.0%,M:1.4%,n:3285
+A28	40XQr	Missing	1.4	C:97.4%[S:96.8%,D:0.6%],F:1.2%,M:1.4%,n:3285
+A28	40XLr	Missing	1.7	C:97.3%[S:96.4%,D:0.9%],F:1.0%,M:1.7%,n:3285
+A28	40XL+P	Missing	1.5	C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285
+A28	40XL+P+P	Missing	0.7	C:99.0%[S:98.2%,D:0.8%],F:0.3%,M:0.7%,n:3285
