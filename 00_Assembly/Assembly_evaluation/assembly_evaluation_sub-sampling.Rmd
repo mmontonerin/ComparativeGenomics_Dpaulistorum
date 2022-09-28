@@ -1,0 +1,189 @@
+---
+title: "Assembly_stats"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assembly stats
+This is a script to show how we selected the best genome assembly of the semispecies of D. paulistorum A28, O11, and MS, by testing different levels of read sub-sampling pre-assembly. 
+
+### Set path and packages 
+
+```{r warning=FALSE, message=FALSE}
+setwd("/Users/mercemontoliu/Documents/git/ComparativeGenomics_Dpaulistorum/00_Assembly/Assembly_evaluation/")
+
+library(data.table)
+library(dplyr)
+library(ggplot2)
+library(RColorBrewer)
+library(grid)
+library(gridExtra)
+library(lattice)
+library(ggpubr)
+```
+
+## Input data
+Files used for this visualization are:
+[assembly_stats.txt](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/Assembly_evaluation/assembly_stats.txt)
+[A28_busco.txt](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/Assembly_evaluation/A28_busco.txt)
+[MS_busco.txt](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/Assembly_evaluation/MS_busco.txt)
+[O11_busco.txt](https://github.com/mmontonerin/ComparativeGenomics_Dpaulistorum/blob/main/00_Assembly/Assembly_evaluation/O11_busco.txt)
+
+
+```{r echo=TRUE}
+data = fread(input = "assembly_stats.txt")
+busco_A28 = fread(input = "A28_busco.txt")
+busco_MS = fread(input = "MS_busco.txt")
+busco_O11 = fread(input = "O11_busco.txt")
+```
+
+# Assembly stats
+
+Prepare data for plotting general assembly stats among all
+
+```{r echo=TRUE}
+species = data$Species
+n50 = data$N50
+n50mb = data$N50 / 1000000
+size = data$TotalLength
+data$Assembly = factor(data$Assembly, levels = c("40X Phred", "40X Phred + ref", "50X Phred", "40X Length", "40X Length + ref", "50X Length", "Nextdenovo"))
+method = data$Assembly
+contig = data$Contigs
+genomemb = data$TotalLength / 1000000
+```
+
+### Plot N50
+```{r echo=TRUE}
+plotn50 <- ggplot(data, aes(x=method, y=n50mb, group=species)) +
+  geom_point(size= 2, aes(color = species))
+plotn50 <- plotn50 + labs(y = "N50 (Mb)", x = "",color = "Sub-species")
+plotn50 <- plotn50 + scale_color_hue(h = c(180, 300))
+plotn50 <- plotn50 + theme_bw()
+plotn50 <- plotn50 + theme(legend.position = "none")
+```
+
+#### Test visualization:
+
+```{r echo=FALSE}
+plot(plotn50)
+```
+
+### Plot Number of Contigs
+```{r echo=TRUE}
+plotnContigs <- ggplot(data, aes(x=method, y=contig, group=species)) +
+  geom_point(size= 2, aes(color = species)) 
+plotnContigs <- plotnContigs + labs(y = "Number of contigs", x = "Sub-sample of reads and assembly method",color = "Sub-species")
+plotnContigs <- plotnContigs + scale_color_hue(h = c(180, 300))
+plotnContigs <- plotnContigs + theme_bw()
+plotnContigs <- plotnContigs + theme(legend.position = "none")
+```
+
+#### Test visualization:
+
+```{r echo=FALSE}
+plot(plotnContigs)
+```
+
+### Plot genome size
+```{r echo=TRUE}
+plotgenome <- ggplot(data, aes(x=method, y=genomemb, group=species)) +
+  geom_point(size= 2, aes(color = species))
+plotgenome <- plotgenome + labs(y = "Assembly size (Mb)", x = "",color = "Sub-species")
+plotgenome <- plotgenome + scale_color_hue(h = c(180, 300))
+plotgenome <- plotgenome + theme_bw()
+plotgenome <- plotgenome + theme(legend.position = c(0.5,-0.2))
+```
+
+#### Test visualization:
+
+```{r echo=FALSE}
+plot(plotgenome)
+```
+
+## Show all stats together
+```{r echo=TRUE}
+stats_plot <- ggarrange(plotgenome,plotn50,plotnContigs, ncol = 1, nrow = 3, common.legend = TRUE, legend = "top")
+```
+
+```{r echo=FALSE}
+plot(stats_plot)
+```
+
+# BUSCO results
+
+Prepare the data for plotting each semi-species BUSCO stats across genome assembly versions  
+```{r echo=TRUE}
+#A28
+busco_A28$BUSCO = factor(busco_A28$BUSCO, levels = c("Missing", "Fragmented", "Complete Duplicated", "Complete Single"))
+busco_A28$Assembly = factor(busco_A28$Assembly, levels = c("Nextdenovo","40XQ", "40XQr", "50XQ", "40XL", "40XLr", "50XL", "40XL+P", "40XL+P+P"))
+
+#MS
+busco_MS$BUSCO = factor(busco_MS$BUSCO, levels = c("Missing", "Fragmented", "Complete Duplicated", "Complete Single"))
+busco_MS$Assembly = factor(busco_MS$Assembly, levels = c("Nextdenovo","40XQ", "40XQr", "50XQ","40XL", "40XLr", "50XL", "40XLr+P", "40XLr+P+P"))
+
+#O11
+busco_O11$BUSCO = factor(busco_O11$BUSCO, levels = c("Missing", "Fragmented", "Complete Duplicated", "Complete Single"))
+busco_O11$Assembly = factor(busco_O11$Assembly, levels = c("Nextdenovo","40XQ", "40XQr", "50XQ", "40XL", "40XLr", "50XL", "50XQ+P", "50XQ+P+P"))
+```
+
+## Plot A28
+```{r echo=TRUE}
+buscoplot_A28 <- ggplot(busco_A28, aes(fill=busco_A28$BUSCO, y=busco_A28$value, x=busco_A28$Assembly)) +
+  geom_bar(position = "stack", stat = "identity")
+buscoplot_A28 <- buscoplot_A28 + labs(y = "", x="", fill="")
+buscoplot_A28 <- buscoplot_A28 + scale_fill_manual(values = c("#020202","#A9A9A9","#047264","#00c1a9"))
+buscoplot_A28 <- buscoplot_A28 + theme_bw()
+buscoplot_A28 <- buscoplot_A28 + coord_flip()
+buscoplot_A28 <- buscoplot_A28 + annotate("text", y=50, x=c(1,2,3,4,5,6,7,8,9), label=c("C:97.4%[S:96.5%,D:0.9%],F:1.2%,M:1.4%,n:3285","C:97.6%[S:96.9%,D:0.7%],F:1.0%,M:1.4%,n:3285","C:97.4%[S:96.8%,D:0.6%],F:1.2%,M:1.4%,n:3285","C:97.5%[S:96.7%,D:0.8%],F:1.2%,M:1.3%,n:3285","C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285","C:97.3%[S:96.4%,D:0.9%],F:1.0%,M:1.7%,n:3285","C:97.6%[S:96.8%,D:0.8%],F:1.0%,M:1.4%,n:3285","C:97.5%[S:96.8%,D:0.7%],F:1.0%,M:1.5%,n:3285","C:99.0%[S:98.2%,D:0.8%],F:0.3%,M:0.7%,n:3285"))
+buscoplot_A28 <- buscoplot_A28 + theme(legend.position = "top")
+```
+
+```{r echo=FALSE}
+plot(buscoplot_A28)
+```
+
+## Plot MS
+
+```{r echo=TRUE}
+buscoplot_MS <- ggplot(busco_MS, aes(fill=busco_MS$BUSCO, y=busco_MS$value, x=busco_MS$Assembly)) +
+  geom_bar(position = "stack", stat = "identity")
+buscoplot_MS <- buscoplot_MS + labs(y = "", x="", fill="")
+buscoplot_MS <- buscoplot_MS + scale_fill_manual(values = c("#020202", "#A9A9A9", "#04557F","#00A9FF"))
+buscoplot_MS <- buscoplot_MS + theme_bw()
+buscoplot_MS <- buscoplot_MS + coord_flip()
+buscoplot_MS <- buscoplot_MS + annotate("text", y=50, x=c(1,2,3,4,5,6,7,8,9), label=c("C:96.8%[S:95.9%,D:0.9%],F:1.3%,M:1.9%,n:3285","C:97.3%[S:96.4%,D:0.9%],F:1.1%,M:1.6%,n:3285","C:97.1%[S:96.2%,D:0.9%],F:1.1%,M:1.8%,n:3285","C:95.8%[S:95.0%,D:0.8%],F:1.1%,M:3.1%,n:3285","C:97.2%[S:96.3%,D:0.9%],F:1.2%,M:1.6%,n:3285","C:97.4%[S:96.6%,D:0.8%],F:1.0%,M:1.6%,n:3285","C:97.2%[S:96.3%,D:0.9%],F:1.1%,M:1.7%,n:3285","C:97.4%[S:96.6%,D:0.8%],F:1.0%,M:1.6%,n:3285","C:99.0%[S:98.1%,D:0.9%],F:0.2%,M:0.8%,n:3285"))
+buscoplot_MS <- buscoplot_MS + theme(legend.position = "top")
+```
+
+```{r echo=FALSE}
+plot(buscoplot_MS)
+```
+
+## Plot O11
+```{r echo=TRUE}
+buscoplot_O11 <- ggplot(busco_O11, aes(fill=busco_O11$BUSCO, y=busco_O11$value, x=busco_O11$Assembly)) +
+  geom_bar(position = "stack", stat = "identity") 
+buscoplot_O11 <- buscoplot_O11 + labs(y = "", x="", fill="")
+buscoplot_O11 <- buscoplot_O11 + scale_fill_manual(values = c("#020202","#A9A9A9","#7E3889", "#E36EF6"))
+buscoplot_O11 <- buscoplot_O11 + theme_bw()
+buscoplot_O11 <- buscoplot_O11 + coord_flip()
+buscoplot_O11 <- buscoplot_O11 + annotate("text", y=50, x=c(1,2,3,4,5,6,7,8,9), label=c("C:97.3%[S:96.3%,D:1.0%],F:1.1%,M:1.6%,n:3285","C:97.2%[S:96.4%,D:0.8%],F:1.1%,M:1.7%,n:3285","C:97.5%[S:96.6%,D:0.9%],F:1.0%,M:1.5%,n:3285","C:97.6%[S:96.7%,D:0.9%],F:1.2%,M:1.2%,n:3285","C:97.1%[S:96.3%,D:0.8%],F:1.1%,M:1.8%,n:3285","C:97.2%[S:96.3%,D:0.9%],F:1.1%,M:1.7%,n:3285","C:97.2%[S:96.4%,D:0.8%],F:0.9%,M:1.9%,n:3285","C:97.6%[S:96.7%,D:0.9%],F:1.2%,M:1.2%,n:3285","C:99.0%[S:98.1%,D:0.9%],F:0.3%,M:0.7%,n:3285"))
+buscoplot_O11 <- buscoplot_O11 + theme(legend.position = "top")
+```
+
+```{r echo=FALSE}
+plot(buscoplot_O11)
+```
+
+## Show all together
+```{r echo=TRUE}
+busco_plots <- ggarrange(buscoplot_A28, buscoplot_MS, buscoplot_O11, ncol = 1, nrow = 3)
+```
+
+```{r echo=FALSE}
+plot(busco_plots)
+```
+
