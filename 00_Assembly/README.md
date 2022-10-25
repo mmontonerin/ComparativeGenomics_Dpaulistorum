@@ -135,6 +135,10 @@ Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa
 
 Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_3_pilon_assembly_polish_3rounds.sh)
 
+A total of 3 rounds of Pilon are run. The final number of changes were used to decide which number of rounds suffice with each genome assembly. Number of changes are counted with [this script](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_4_count_changes.sh). 
+
+It is enough with 2 rounds of Pilon, except for *D. paulistorum* L12, *D. paulistorum* L06, and *D. willistoni* 00, which required 3 rounds.
+
 
 ## Assembly assessment
 
