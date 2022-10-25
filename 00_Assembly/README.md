@@ -133,7 +133,7 @@ Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa
 * *D. sucinea* [(SRR13070638)](https://www.ncbi.nlm.nih.gov/sra/SRX9518220)(In NCBI as *D. nebulosa*)
 * *D. sp* [(SRR13070637)](https://www.ncbi.nlm.nih.gov/sra/SRX9518221)(Possible *D. sucinea*)
 
-Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_3_pilon_assembly_polish.sh)
+Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish. Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/Scripts/01_3_pilon_assembly_polish_3rounds.sh)
 
 
 ## Assembly assessment
